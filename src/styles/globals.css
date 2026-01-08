@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__next {
+  height: 100%;
+}
+
+/* --- Dark form inputs hardening --- */
+input, input[type="text"], input[type="number"], input[type="search"] {
+  background-color: #0b0b0b;
+  color: #ffffff;
+  border-color: #27272a;
+  caret-color: #ffffff;
+}
+input::placeholder {
+  color: #9ca3af;
+}
+/* Chrome autofill */
+input:-webkit-autofill {
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: 0 0 0px 1000px #0b0b0b inset !important;
+}

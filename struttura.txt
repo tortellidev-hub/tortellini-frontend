@@ -1,0 +1,40 @@
+src/app
+├── admin
+│   └── page.tsx
+├── buy
+│   └── page.tsx
+├── claim
+│   └── page.tsx
+├── contract
+│   └── page.tsx
+├── faq
+│   └── page.tsx
+├── globals.css
+├── layout.tsx
+└── page.tsx
+src/components
+├── AddressQR.tsx
+├── BuyDisclaimer.tsx
+├── BuyForm.tsx
+├── ClaimAirdrop.tsx
+├── ClaimPanel.tsx
+├── ClaimShell.tsx
+├── ClientHeader.tsx
+├── ClientHeader.tsx:Zone.Identifier
+├── OnChainPhaseBadge.tsx
+├── PhaseBadge.tsx
+├── PhaseProgress.tsx
+├── QRAddress.tsx
+├── QRAddress.tsx:Zone.Identifier
+├── SocialLinks.tsx
+├── SocialLinks.tsx:Zone.Identifier
+├── SolanaWalletProviders - Copia.tsx
+├── SolanaWalletProviders.tsx
+├── TopNav.tsx
+├── WalletMultiButton.tsx
+├── WalletMultiButton.tsx:Zone.Identifier
+├── WalletProvider.tsx
+├── WalletSection.tsx
+└── WalletSection.tsx:Zone.Identifier
+
+7 directories, 31 files

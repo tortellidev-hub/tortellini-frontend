@@ -1,0 +1,31 @@
+# Solana keypairs (aggiungi qui quelli che usi)
+id.json
+team_wallet.json
+rewards_wallet.json
+lp_wallet.json
+presale_stock.json
+presale_treasury.json
+treasury_reserve.json
+
+# Environment files
+.env
+.env.local
+.env.*
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+
+# env
+.env
+.env.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store

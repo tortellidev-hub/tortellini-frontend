@@ -1,0 +1,1290 @@
+{
+  "address": "EbS2PrDyxBfbEdSQA64jLQTyhCARsDcELr4kUMoG8YK2",
+  "metadata": {
+    "name": "tortellini",
+    "version": "0.1.0",
+    "spec": "0.1.0"
+  },
+  "instructions": [
+    {
+      "name": "airdrop_manual",
+      "discriminator": [
+        78,
+        244,
+        231,
+        56,
+        125,
+        115,
+        41,
+        18
+      ],
+      "accounts": [
+        {
+          "name": "state",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "source",
+          "writable": true
+        },
+        {
+          "name": "destination",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "airdrop_rewards_batch",
+      "discriminator": [
+        207,
+        165,
+        74,
+        39,
+        130,
+        82,
+        64,
+        180
+      ],
+      "accounts": [
+        {
+          "name": "state",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "source",
+          "writable": true
+        },
+        {
+          "name": "destination",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "burn_unclaimed_cycle",
+      "docs": [
+        "(OPZIONALE/LEGACY) Brucia token non riscossi dopo la chiusura della finestra."
+      ],
+      "discriminator": [
+        140,
+        27,
+        93,
+        136,
+        211,
+        5,
+        230,
+        154
+      ],
+      "accounts": [
+        {
+          "name": "state",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "snapshot",
+          "writable": true
+        },
+        {
+          "name": "vault_authority",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  110,
+                  97,
+                  112,
+                  115,
+                  104,
+                  111,
+                  116,
+                  95,
+                  118,
+                  97,
+                  117,
+                  108,
+                  116,
+                  95,
+                  118,
+                  49
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "snapshot"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault_ata",
+          "writable": true
+        },
+        {
+          "name": "token_mint",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "burn_unsold_tokens",
+      "discriminator": [
+        120,
+        35,
+        119,
+        172,
+        187,
+        79,
+        54,
+        200
+      ],
+      "accounts": [
+        {
+          "name": "state",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "token_account",
+          "writable": true
+        },
+        {
+          "name": "token_mint",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "buy_presale_tokens",
+      "discriminator": [
+        251,
+        8,
+        216,
+        45,
+        205,
+        249,
+        65,
+        247
+      ],
+      "accounts": [
+        {
+          "name": "state",
+          "writable": true
+        },
+        {
+          "name": "treasury",
+          "writable": true
+        },
+        {
+          "name": "admin_token_account",
+          "writable": true
+        },
+        {
+          "name": "user_token_account",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "lamports_sent",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "claim_airdrop",
+      "discriminator": [
+        137,
+        50,
+        122,
+        111,
+        89,
+        254,
+        8,
+        20
+      ],
+      "accounts": [
+        {
+          "name": "snapshot",
+          "writable": true
+        },
+        {
+          "name": "vault_authority",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  110,
+                  97,
+                  112,
+                  115,
+                  104,
+                  111,
+                  116,
+                  95,
+                  118,
+                  97,
+                  117,
+                  108,
+                  116,
+                  95,
+                  118,
+                  49
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "snapshot"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault_ata",
+          "writable": true
+        },
+        {
+          "name": "state",
+          "writable": true
+        },
+        {
+          "name": "user_destination",
+          "writable": true
+        },
+        {
+          "name": "claimer",
+          "signer": true
+        },
+        {
+          "name": "token_mint",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "emergency_withdraw_tokens",
+      "discriminator": [
+        8,
+        191,
+        62,
+        11,
+        213,
+        158,
+        8,
+        229
+      ],
+      "accounts": [
+        {
+          "name": "state",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "from",
+          "writable": true
+        },
+        {
+          "name": "to",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize",
+      "discriminator": [
+        175,
+        175,
+        109,
+        31,
+        13,
+        152,
+        155,
+        237
+      ],
+      "accounts": [
+        {
+          "name": "state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "token_mint"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "pause_presale",
+      "discriminator": [
+        100,
+        158,
+        107,
+        128,
+        173,
+        140,
+        237,
+        217
+      ],
+      "accounts": [
+        {
+          "name": "state",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "signer": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "resume_presale",
+      "discriminator": [
+        34,
+        45,
+        30,
+        147,
+        226,
+        254,
+        42,
+        152
+      ],
+      "accounts": [
+        {
+          "name": "state",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "signer": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "set_admin",
+      "discriminator": [
+        251,
+        163,
+        0,
+        52,
+        91,
+        194,
+        187,
+        92
+      ],
+      "accounts": [
+        {
+          "name": "state",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "new_admin",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "set_presale_start",
+      "discriminator": [
+        202,
+        240,
+        192,
+        243,
+        111,
+        19,
+        131,
+        108
+      ],
+      "accounts": [
+        {
+          "name": "state",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "new_timestamp",
+          "type": "i64"
+        }
+      ]
+    },
+    {
+      "name": "simulate_milestone",
+      "discriminator": [
+        60,
+        142,
+        48,
+        136,
+        16,
+        214,
+        8,
+        255
+      ],
+      "accounts": [
+        {
+          "name": "snapshot",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  110,
+                  97,
+                  112,
+                  115,
+                  104,
+                  111,
+                  116,
+                  95,
+                  118,
+                  49
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "cycle"
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "cycle",
+          "type": "u64"
+        },
+        {
+          "name": "total_airdrop_amount",
+          "type": "u64"
+        },
+        {
+          "name": "claim_window_secs",
+          "type": "i64"
+        }
+      ]
+    },
+    {
+      "name": "sweep_unclaimed_cycle",
+      "docs": [
+        "🧹 NUOVO: sposta i non-claimed verso un ATA \"sink\" (es. admin) per distruggerli manualmente off‑chain."
+      ],
+      "discriminator": [
+        151,
+        85,
+        47,
+        24,
+        25,
+        34,
+        190,
+        62
+      ],
+      "accounts": [
+        {
+          "name": "state",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "snapshot",
+          "writable": true
+        },
+        {
+          "name": "vault_authority",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  110,
+                  97,
+                  112,
+                  115,
+                  104,
+                  111,
+                  116,
+                  95,
+                  118,
+                  97,
+                  117,
+                  108,
+                  116,
+                  95,
+                  118,
+                  49
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "snapshot"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vault_ata",
+          "writable": true
+        },
+        {
+          "name": "sink_destination",
+          "docs": [
+            "Destinazione sweep (ATA admin o wallet \"sink\")"
+          ],
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "withdraw_sol",
+      "discriminator": [
+        145,
+        131,
+        74,
+        136,
+        65,
+        137,
+        42,
+        38
+      ],
+      "accounts": [
+        {
+          "name": "state",
+          "writable": true
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "recipient",
+          "writable": true
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Snapshot",
+      "discriminator": [
+        137,
+        213,
+        28,
+        133,
+        224,
+        161,
+        48,
+        108
+      ]
+    },
+    {
+      "name": "State",
+      "discriminator": [
+        216,
+        146,
+        107,
+        94,
+        104,
+        75,
+        182,
+        177
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "EvtAdminChanged",
+      "discriminator": [
+        33,
+        14,
+        131,
+        30,
+        140,
+        140,
+        114,
+        209
+      ]
+    },
+    {
+      "name": "EvtAirdropBatch",
+      "discriminator": [
+        74,
+        64,
+        22,
+        44,
+        34,
+        189,
+        153,
+        11
+      ]
+    },
+    {
+      "name": "EvtAirdropClaimed",
+      "discriminator": [
+        65,
+        115,
+        132,
+        242,
+        74,
+        228,
+        95,
+        82
+      ]
+    },
+    {
+      "name": "EvtAirdropManual",
+      "discriminator": [
+        171,
+        102,
+        213,
+        144,
+        162,
+        122,
+        93,
+        184
+      ]
+    },
+    {
+      "name": "EvtBurnUnclaimed",
+      "discriminator": [
+        68,
+        120,
+        142,
+        174,
+        254,
+        229,
+        48,
+        212
+      ]
+    },
+    {
+      "name": "EvtBurnUnsold",
+      "discriminator": [
+        84,
+        239,
+        219,
+        20,
+        215,
+        57,
+        152,
+        79
+      ]
+    },
+    {
+      "name": "EvtEmergencyWithdraw",
+      "discriminator": [
+        30,
+        137,
+        80,
+        162,
+        137,
+        139,
+        240,
+        227
+      ]
+    },
+    {
+      "name": "EvtInitialized",
+      "discriminator": [
+        26,
+        118,
+        80,
+        95,
+        41,
+        75,
+        205,
+        160
+      ]
+    },
+    {
+      "name": "EvtMilestoneOpened",
+      "discriminator": [
+        9,
+        208,
+        232,
+        119,
+        177,
+        195,
+        239,
+        139
+      ]
+    },
+    {
+      "name": "EvtPresaleBuy",
+      "discriminator": [
+        242,
+        227,
+        100,
+        21,
+        219,
+        4,
+        169,
+        186
+      ]
+    },
+    {
+      "name": "EvtPresalePaused",
+      "discriminator": [
+        11,
+        239,
+        88,
+        201,
+        92,
+        185,
+        248,
+        155
+      ]
+    },
+    {
+      "name": "EvtPresaleResumed",
+      "discriminator": [
+        125,
+        65,
+        92,
+        179,
+        212,
+        13,
+        220,
+        19
+      ]
+    },
+    {
+      "name": "EvtPresaleStartChanged",
+      "discriminator": [
+        63,
+        34,
+        185,
+        202,
+        133,
+        156,
+        142,
+        216
+      ]
+    },
+    {
+      "name": "EvtSweepUnclaimed",
+      "discriminator": [
+        252,
+        155,
+        67,
+        226,
+        98,
+        243,
+        42,
+        74
+      ]
+    },
+    {
+      "name": "EvtWithdrawSol",
+      "discriminator": [
+        114,
+        152,
+        150,
+        169,
+        29,
+        255,
+        44,
+        211
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "Unauthorized",
+      "msg": "Unauthorized"
+    },
+    {
+      "code": 6001,
+      "name": "PresaleEnded",
+      "msg": "Presale has ended"
+    },
+    {
+      "code": 6002,
+      "name": "ContractFrozen",
+      "msg": "Contract is frozen"
+    },
+    {
+      "code": 6003,
+      "name": "AlreadyClaimed",
+      "msg": "Already claimed for this cycle"
+    },
+    {
+      "code": 6004,
+      "name": "Overflow",
+      "msg": "Overflow"
+    },
+    {
+      "code": 6005,
+      "name": "PresaleNotStarted",
+      "msg": "Presale not started"
+    },
+    {
+      "code": 6006,
+      "name": "BumpError",
+      "msg": "Missing bump"
+    },
+    {
+      "code": 6007,
+      "name": "ClaimWindowClosed",
+      "msg": "Claim window is closed"
+    },
+    {
+      "code": 6008,
+      "name": "ClaimWindowOpen",
+      "msg": "Claim window is still open"
+    }
+  ],
+  "types": [
+    {
+      "name": "EvtAdminChanged",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "old_admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "new_admin",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EvtAirdropBatch",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "to",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EvtAirdropClaimed",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "cycle",
+            "type": "u64"
+          },
+          {
+            "name": "claimer",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EvtAirdropManual",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "to",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EvtBurnUnclaimed",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "cycle",
+            "type": "u64"
+          },
+          {
+            "name": "burned",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EvtBurnUnsold",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EvtEmergencyWithdraw",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "from",
+            "type": "pubkey"
+          },
+          {
+            "name": "to",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EvtInitialized",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "presale_start",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EvtMilestoneOpened",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "cycle",
+            "type": "u64"
+          },
+          {
+            "name": "total",
+            "type": "u64"
+          },
+          {
+            "name": "window_secs",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EvtPresaleBuy",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "buyer",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EvtPresalePaused",
+      "type": {
+        "kind": "struct",
+        "fields": []
+      }
+    },
+    {
+      "name": "EvtPresaleResumed",
+      "type": {
+        "kind": "struct",
+        "fields": []
+      }
+    },
+    {
+      "name": "EvtPresaleStartChanged",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "new_presale_start",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EvtSweepUnclaimed",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "cycle",
+            "type": "u64"
+          },
+          {
+            "name": "swept",
+            "type": "u64"
+          },
+          {
+            "name": "to",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EvtWithdrawSol",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "from",
+            "type": "pubkey"
+          },
+          {
+            "name": "to",
+            "type": "pubkey"
+          },
+          {
+            "name": "lamports",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Snapshot",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "cycle",
+            "type": "u64"
+          },
+          {
+            "name": "claimed",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "total_airdrop_amount",
+            "type": "u64"
+          },
+          {
+            "name": "claimed_amount",
+            "type": "u64"
+          },
+          {
+            "name": "opened_at",
+            "type": "i64"
+          },
+          {
+            "name": "claim_window_secs",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "State",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "presale_start",
+            "type": "i64"
+          },
+          {
+            "name": "frozen",
+            "type": "bool"
+          },
+          {
+            "name": "total_lamports_raised",
+            "type": "u64"
+          },
+          {
+            "name": "last_milestone",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ]
+}
