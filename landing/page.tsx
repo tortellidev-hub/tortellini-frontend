@@ -69,7 +69,7 @@ export default function LandingPage() {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/presale"
+                href="/buy"
                 className="inline-flex items-center rounded-md bg-emerald-500 hover:bg-emerald-400 text-black px-5 py-3 text-sm font-semibold transition"
               >
                 Partecipa ora
@@ -267,7 +267,7 @@ export default function LandingPage() {
             >
               Reddit
             </a>
-            <Link href="/presale" className="hover:text-zinc-200">
+            <Link href="/buy" className="hover:text-zinc-200">
               Presale
             </Link>
           </div>
