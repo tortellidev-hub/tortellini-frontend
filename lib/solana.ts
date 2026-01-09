@@ -1,32 +1,48 @@
-// lib/solana.ts (solo la parte listSnapshots)
+// lib/solana.ts
+import { Connection, PublicKey } from "@solana/web3.js";
+import { ENV } from "@/env";
+
+// ─────────────────────────────────────────────
+// Core on-chain constants (single source of truth)
+// ─────────────────────────────────────────────
+
+export const PROGRAM_ID = new PublicKey(ENV.PROGRAM_ID);
+export const TREASURY_SOL = new PublicKey(ENV.TREASURY);
+export const MINT = new PublicKey(ENV.MINT);
+
+// ─────────────────────────────────────────────
+// Snapshot helpers (read-only)
+// ─────────────────────────────────────────────
+
+export type SnapshotAccount = {
+  pubkey: PublicKey;
+  data: any; // tipizzabile quando riattivi il claim UI
+};
+
 export async function listSnapshots(
   connection: Connection,
-  programId: PublicKey,
+  programId: PublicKey = PROGRAM_ID,
 ): Promise<SnapshotAccount[]> {
-  // account discriminator: 8 bytes skip; you can also filter by size, seeds, etc.
   const accounts = await connection.getProgramAccounts(programId, {
     filters: [
-      // reasonable min size: 8 (disc) + fixed fields (44) = 52 bytes
-      { dataSize: 52 + 32 }, // allow at least 1 Pubkey in claimed vec; tweak if needed
+      // discriminator (8) + fixed fields (~52) + almeno 1 pubkey
+      { dataSize: 52 + 32 },
     ],
   });
 
   const out: SnapshotAccount[] = [];
+
   for (const a of accounts) {
     try {
-      const data = decodeSnapshot(Buffer.from(a.account.data)); // tua decodeSnapshot
-      // filtra con una condizione sensata: opened_at/claim_window_secs non nulli ecc.
-      if (
-        typeof data.cycle === "number" &&
-        typeof data.opened_at === "number" &&
-        typeof data.claim_window_secs === "number"
-      ) {
-        out.push({ pubkey: a.pubkey, data });
-      }
+      // ⚠️ decodeSnapshot NON incluso finché non serve davvero
+      // const data = decodeSnapshot(Buffer.from(a.account.data));
+      // out.push({ pubkey: a.pubkey, data });
+
+      out.push({ pubkey: a.pubkey, data: a.account.data });
     } catch {
-      // ignora account che non matchano lo schema (evita eccezioni che romperebbero la pagina)
       continue;
     }
   }
+
   return out;
 }
