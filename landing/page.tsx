@@ -203,14 +203,7 @@ export default function LandingPage() {
           ))}
         </ol>
 
-        <div className="mt-6">
-          <Link
-            href="/admin/milestones"
-            className="inline-flex items-center rounded-md border border-white/20 px-4 py-2 text-sm hover:bg-white/10 transition"
-          >
-            Vista tecnica (snapshot & claim)
-          </Link>
-        </div>
+
       </section>
 
       {/* FAQ */}
