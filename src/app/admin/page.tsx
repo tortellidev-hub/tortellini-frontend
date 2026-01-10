@@ -160,7 +160,12 @@ return {
         }}
       >
         <KpiCard label="Treasury (SOL)" value={`${fmt(kpi.treasurySol, 4)} SOL`} hint={`Address: ${shortAddr(ENV.TREASURY)}`} />
-        <KpiCard label="Presale Phase" value={TORT.PRESALE.PHASE} hint={`1 SOL = ${fmt(TORT.PRESALE.TORT_PER_SOL, 0)} ${TORT.SYMBOL}`} />
+
+<KpiCard
+  label="Presale Phases"
+  value={`${TORT.PRESALE.PHASES.length} phases`}
+  hint={`1 SOL = ${fmt(TORT.PRESALE.TORT_PER_SOL, 0)} ${TORT.SYMBOL}`}
+/>
         <KpiCard label="Allocation (total presale)" value={`${fmt(TORT.PRESALE.ALLOCATION, 0)} ${TORT.SYMBOL}`} hint="Configured in /config/tort.ts" />
         <KpiCard label="Remaining (admin ATA)" value={`${fmt(kpi.adminRemaining, 0)} ${TORT.SYMBOL}`} hint={publicKey ? "Connected wallet ATA" : "Connect admin wallet"} />
         <KpiCard label="Sold (est.)" value={`${fmt(kpi.sold, 0)} ${TORT.SYMBOL}`} hint="Alloc − Remaining (estimate)" />
