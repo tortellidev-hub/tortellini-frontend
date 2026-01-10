@@ -105,12 +105,22 @@ export default function AdminPage() {
 
   // derive totals from per-phase manual data
   const phaseRows = useMemo(() => {
-    return TORT.PHASES.map((ph: Phase) => {
-      const sold = Number(soldByPhase[ph.name] ?? 0);
-      const remaining = Math.max(0, ph.allocation - sold);
-      const sol = ph.tortPerSol > 0 ? sold / ph.tortPerSol : 0;
-      return { ...ph, sold, remaining, sol };
-    });
+    return TORT.PRESALE.PHASES.map((ph: Phase) => {
+  const sold = Number(soldByPhase[ph] ?? 0);
+  const allocation = TORT.PRESALE.ALLOCATION / TORT.PRESALE.PHASES.length;
+  const remaining = Math.max(0, allocation - sold);
+  const sol =
+    TORT.PRESALE.TORT_PER_SOL > 0
+      ? sold / TORT.PRESALE.TORT_PER_SOL
+      : 0;
+
+  return {
+    name: ph,
+    sold,
+    remaining,
+    sol,
+  };
+});
   }, [soldByPhase]);
 
   const totals = useMemo(() => {
