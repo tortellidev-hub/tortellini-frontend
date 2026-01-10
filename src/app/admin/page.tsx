@@ -126,12 +126,13 @@ export default function AdminPage() {
   const totals = useMemo(() => {
     const sum = <T extends keyof (typeof phaseRows)[number]>(key: T) =>
       phaseRows.reduce((acc, r) => acc + (Number(r[key]) || 0), 0);
-    return {
-      allocation: sum("allocation"),
-      sold: sum("sold"),
-      remaining: sum("remaining"),
-      sol: sum("sol"),
-    };
+return {
+  allocation: TORT.PRESALE.ALLOCATION,
+  sold: sum("sold"),
+  remaining: sum("remaining"),
+  sol: sum("sol"),
+};
+
   }, [phaseRows]);
 
   return (
